@@ -13,7 +13,38 @@ const rl = readline.createInterface({
 
 const pigLatin = (word) => {
 
-  // Your code here
+  console.log("Your word is " + word)
+  console.log("Your first letter is " + word[0] )
+
+  let firstLetter = word[0]
+  let vowels = ["a", "e", "i", "o", "u"]
+
+
+  //If is starts with a vowel just add "yay"
+  if(vowels.includes( firstLetter) == true)
+  {
+    // console.log(firstLetter + " is a vowel")
+    return word + "yay"
+  }
+  else
+  {
+    // first letter is a consonant // car -> arc + "ay"
+
+  for (let index = 0; index < word.length; index++) {
+
+    //check each letter to see how many consonants there are on a row at start
+    //
+  
+  }
+  
+    // console.log(firstLetter + " is NOT a vowel")
+    // let fisrConsonants = word.sbstr(firstConsonants.lenth-1, word.length -1)
+    let wordWithoutConsonant = word.substr(1, word.length - 1)
+    let finalAnswer = wordWithoutConsonant + firstLetter + "ay"
+    return finalAnswer
+  }
+
+  //else grab all consonants up to the first vowel, move them to the end, then add ay
 
 }
 
