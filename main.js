@@ -19,33 +19,45 @@ const pigLatin = (word) => {
   let firstLetter = word[0]
   let vowels = ["a", "e", "i", "o", "u"]
 
+  //lower case and trim like : 
+  word = word.toLowerCase().trim()
+  console.log("testing word", word)
+
+                      
 
   //If is starts with a vowel just add "yay"
-  if(vowels.includes( firstLetter) == true)
-  {
-    // console.log(firstLetter + " is a vowel")
-    return word + "yay"
-  }
-  else
+
+  
   {
     // first letter is a consonant // car -> arc + "ay"
 
   for (let index = 0; index < word.length; index++) {
 
+    if(vowels.includes( firstLetter) == true)
+    {
+      // console.log(firstLetter + " is a vowel")
+      return word + "yay"
+    }
+    else if (vowels.includes(word[index])){
+    let wordWithoutConsonant = word.slice(index)
+    let beginingOfWord = word.slice(0,index)
+    let finalAnswer = wordWithoutConsonant + beginingOfWord + "ay"
+    return finalAnswer
+
+
     //check each letter to see how many consonants there are on a row at start
-    //
+  
   
   }
   
     // console.log(firstLetter + " is NOT a vowel")
     // let fisrConsonants = word.sbstr(firstConsonants.lenth-1, word.length -1)
-    let wordWithoutConsonant = word.substr(1, word.length - 1)
-    let finalAnswer = wordWithoutConsonant + firstLetter + "ay"
-    return finalAnswer
+
   }
 
-  //else grab all consonants up to the first vowel, move them to the end, then add ay
-
+    //else grab all consonants up to the first vowel, move them to the end, then add ay
+  
+}
 }
 
 // the first function called in the program to get an input from the user
